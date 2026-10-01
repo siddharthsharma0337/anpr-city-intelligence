@@ -55,6 +55,25 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Root route — confirms the server is alive
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ONLINE',
+    service: 'ANPR City Intelligence — Backend API',
+    version: '1.0.0',
+    health: '/api/health',
+    docs: {
+      cameras:      '/api/cameras',
+      detections:   '/api/detections',
+      vehicles:     '/api/vehicles',
+      blacklist:    '/api/blacklist',
+      alerts:       '/api/alerts',
+      commandCenter:'/api/command-center',
+      analytics:    '/api/analytics'
+    }
+  });
+});
+
 // Mount Core API Routes
 app.use('/api/cameras', camerasRouter);
 app.use('/api/detections', detectionsRouter);
@@ -63,6 +82,11 @@ app.use('/api/blacklist', blacklistRouter);
 app.use('/api/alerts', alertsRouter);
 app.use('/api/command-center', commandCenterRouter);
 app.use('/api/analytics', analyticsRouter);
+
+// 404 handler for unknown API routes
+app.use((req, res) => {
+  res.status(404).json({ error: true, message: `Route not found: ${req.method} ${req.originalUrl}` });
+});
 
 
 
