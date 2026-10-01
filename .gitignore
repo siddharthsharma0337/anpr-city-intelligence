@@ -1,0 +1,46 @@
+# ===========================
+# Root .gitignore
+# ===========================
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.env
+*.egg
+dist/
+build/
+
+# Vite build output
+client/dist/
+
+# Uploaded files (don't commit runtime uploads)
+server/uploads/
+
+# AI model weights — too large for git (use Git LFS or separate storage)
+# Uncomment if you want to exclude the model:
+# AI-Model/models/*.pt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+logs/
+
+# Environment files (keep .env.example, exclude actual .env)
+server/.env
+!server/.env.example

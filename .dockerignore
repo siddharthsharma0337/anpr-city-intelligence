@@ -1,0 +1,14 @@
+.dockerignore
+node_modules
+client/node_modules
+server/node_modules
+client/dist
+*.log
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+AI-Model/test_samples
+server/test_*.js

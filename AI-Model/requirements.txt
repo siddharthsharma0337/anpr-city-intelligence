@@ -1,0 +1,13 @@
+# =====================================================================
+# AI-Model/requirements.txt — CPU-ONLY version for Render deployment
+# For local GPU development, use requirements.gpu.txt instead
+# =====================================================================
+
+torch==2.1.0
+torchvision==0.16.0
+
+# Core dependencies
+ultralytics==8.4.127
+opencv-python-headless==4.9.0.80
+fast-plate-ocr[onnx-cpu]>=1.1.0
+pymongo==4.18.1
